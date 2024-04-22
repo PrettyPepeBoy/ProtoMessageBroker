@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package broker;
+
+option go_package = "shilenko.broker.v1;brokerv1";
+
+service Broker{
+  rpc BuyingProduct (BuyingProductRequest) returns (BuyingProductResponse);
+}
+
+message BuyingProductRequest{
+  string email = 1;
+  int64 product_id = 2;
+}
+
+message BuyingProductResponse{
+  bool already_buy = 1;
+}
